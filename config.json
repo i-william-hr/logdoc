@@ -1,0 +1,31 @@
+{
+  "auto_units": true,
+  "units": ["aichat"],
+  "window_min": 10,
+  "cooldown_hours": 6,
+  "max_llm_calls_per_day": 20,
+  "max_alerts_per_day": 10,
+  "context_lines": 50,
+  "context_line_chars": 300,
+  "context_total_chars": 10000,
+  "nginx_error_log": "/var/log/nginx/error.log",
+  "nginx_max_bytes": 524288,
+  "journal_error_re": "(?i)\\b(fatal|panic|segfault|traceback|uncaught exception|critical|error|failed|failure)\\b",
+  "nginx_error_re": "\\[(error|crit|alert|emerg)\\]",
+  "ignore_res": [
+    "(?i)\\b0 (errors|failures)\\b",
+    "(?i)\\berror\\s*:\\s*none\\b",
+    "(?i)no such file or directory"
+  ],
+  "digest_hours": 24,
+  "fps_prune_days": 14,
+  "backup_configs": [
+    "/etc/{unit}.conf",
+    "/etc/{unit}.conf.template",
+    "/etc/systemd/system/{unit}.service",
+    "/var/lib/{unit}/",
+    "/etc/{unit}/*"
+  ],
+  "exclude_units": ["aichat"],
+  "exclude_patterns": ["aichat.service"]
+}
